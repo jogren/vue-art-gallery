@@ -1,6 +1,5 @@
 <template>
   <main id="app">
-    <Header />
     <div class="img-container">
       <div v-bind:key="image.id" v-for="image in images">
         <img :src="image.baseimageurl" />
@@ -11,12 +10,11 @@
 
 <script>
   import { museumData } from '../apiCalls/apiCalls';
-  import Header from '../components/layout/Header';
     
 export default {
   name: 'Home',
   components: {
-    Header
+
   },
   data() {
     return {
@@ -31,18 +29,7 @@ export default {
 }
 </script>
 
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-sarif;
-  line-height: 1.4;
-}
-  
+<style>  
 .img-container {
   display: flex;
   flex-wrap: wrap;
