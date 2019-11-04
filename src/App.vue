@@ -1,70 +1,32 @@
 <template>
-  <main id="app">
-    <Header />
-    <div class="img-container">
-      <div v-bind:key="image.id" v-for="image in images">
-        <img :src="image.baseimageurl" />
-      </div>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
     </div>
-  </main>
+    <router-view/>
+  </div>
 </template>
 
-<script>
-import { museumData } from './apiCalls/apiCalls';
-import Header from './components/layout/Header';
-
-export default {
-  name: 'app',
-  components: {
-    Header
-  },
-  data() {
-    return {
-      msg: 'Hello',
-      images: []
-    }
-  },
-  async created() {
-    const response = await museumData();
-    this.images = response.records
-  }
-}
-</script>
-
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-sarif;
-  line-height: 1.4;
+#nav {
+  padding: 30px;
 }
 
-.img-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
 }
 
-img {
-  height: 500px;
-  width: 330px;
-  margin: 10px;
-}
-
-img:hover{ 
-  animation: artwork_hover 1s;
-  animation-timing-function: linear;   
-}
-
-@keyframes artwork_hover {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(2deg); }
-  50% { transform: rotate(0deg); }
-  75% { transform: rotate(-2deg); }
-  100% { transform: rotate(0deg); }
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
