@@ -1,8 +1,8 @@
 <template>
-  <div @click="toggleImage" class="Artwork-container">
-    <img v-if="image.showPicture" :src="image.image" />
+  <div @click="toggleImage" @keyup.enter="toggleImage" class="Artwork-container" tabindex="0">
+    <img v-if="image.showPicture" :src="image.image"/>
     <div v-else class="image-info-container">
-      <p><span>Title:</span> {{image.title}}</p>
+      <p>Title: {{image.title}}</p>
       <p>Artist: {{image.artist}}</p>
       <p>Culture: {{image.culture}}</p>
       <p>Century: {{image.century}}</p>
@@ -27,12 +27,12 @@ export default {
   height: 500px;
   width: 300px;
   margin: 10px;
-  will-change: transform;
 }
 
 .image-info-container {
   height: 100%;
   width: 100%;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,5 +59,4 @@ img:hover {
   75% {transform: rotate(-2deg); }
   100% {transform: rotate(0deg); }
   }
-
 </style>

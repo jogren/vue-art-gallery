@@ -6,7 +6,7 @@
 
 <script>
   import { getArtwork } from '../apiCalls/apiCalls';
-  import ArtContainer from '../components/ArtContainer';
+  import ArtContainer from '../components/ArtContainer/ArtContainer';
     
 export default {
   name: "Home",

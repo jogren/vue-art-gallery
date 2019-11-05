@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Artwork from './Artwork';
+import Artwork from '../Artwork/Artwork';
 export default {
   name: "ArtContainer",
   props: ["images"],
