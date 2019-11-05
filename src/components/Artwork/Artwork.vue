@@ -37,6 +37,7 @@ export default {
 .image-info-container {
   height: 100%;
   width: 100%;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
