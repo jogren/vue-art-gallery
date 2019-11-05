@@ -1,5 +1,5 @@
 <template>
-  <div @click="toggleImage" @keyup="toggleImageOnKeyUp" class="Artwork-container" tabindex="0">
+  <div @click="toggleImage" @keyup.enter="toggleImage" class="Artwork-container" tabindex="0">
     <img v-if="image.showPicture" :src="image.image"/>
     <div v-else class="image-info-container">
       <p>Title: {{image.title}}</p>
@@ -17,11 +17,6 @@ export default {
   methods: {
     toggleImage() {
       this.image.showPicture = !this.image.showPicture;
-    },
-    toggleImageOnKeyUp(e) {
-      if(e.keyCode === 13) {
-        this.image.showPicture = !this.image.showPicture;
-      }
     }
   }
 }
@@ -64,5 +59,4 @@ img:hover {
   75% {transform: rotate(-2deg); }
   100% {transform: rotate(0deg); }
   }
-
 </style>
