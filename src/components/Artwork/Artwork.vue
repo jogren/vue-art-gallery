@@ -27,7 +27,6 @@ export default {
   height: 500px;
   width: 300px;
   margin: 10px;
-  will-change: transform;
 }
 
 .image-info-container {
