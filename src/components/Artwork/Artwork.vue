@@ -1,8 +1,8 @@
 <template>
-  <div @click="toggleImage" class="Artwork-container">
-    <img v-if="image.showPicture" :src="image.image" />
+  <div @click="toggleImage" @keyup="toggleImageOnKeyUp" class="Artwork-container" tabindex="0">
+    <img v-if="image.showPicture" :src="image.image"/>
     <div v-else class="image-info-container">
-      <p><span>Title:</span> {{image.title}}</p>
+      <p>Title: {{image.title}}</p>
       <p>Artist: {{image.artist}}</p>
       <p>Culture: {{image.culture}}</p>
       <p>Century: {{image.century}}</p>
@@ -17,6 +17,11 @@ export default {
   methods: {
     toggleImage() {
       this.image.showPicture = !this.image.showPicture;
+    },
+    toggleImageOnKeyUp(e) {
+      if(e.keyCode === 13) {
+        this.image.showPicture = !this.image.showPicture;
+      }
     }
   }
 }
