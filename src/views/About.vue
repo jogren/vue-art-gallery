@@ -11,6 +11,7 @@ p {
   padding: 5% 10%;
   font-size: 18px;
   line-height: 38px;
+  border: 1px solid #ccc;
 }
 
 </style>
