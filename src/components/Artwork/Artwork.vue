@@ -36,10 +36,16 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 1px solid #ccc;
+}
+
+.image-info-container:hover {
+  box-shadow: 0px 0px 3px 3px #ccc;
 }
 
 .image-info-container p {
   margin-bottom: 5px;
+  text-align: center;
 }
 
 img {
@@ -54,9 +60,9 @@ img:hover {
   
 @keyframes artwork_hover {
   0% { transform: rotate(0deg); }
-  25% {transform: rotate(2deg); }
+  25% {transform: rotate(1deg); }
   50% {transform: rotate(0deg); }
-  75% {transform: rotate(-2deg); }
+  75% {transform: rotate(-1deg); }
   100% {transform: rotate(0deg); }
   }
 </style>
